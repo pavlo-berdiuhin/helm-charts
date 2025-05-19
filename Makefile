@@ -1,4 +1,4 @@
-build-charts:
+package_charts:
 	helm lint charts/*
 	helm package charts/*
 
