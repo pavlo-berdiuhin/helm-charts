@@ -3,9 +3,9 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2025-05-24T10:35:18.629578+02:00"
+    created: "2025-05-24T10:45:38.302906+02:00"
     description: The common Helm chart for Kubernetes
-    digest: 99e903067f76ea75ebf622400c86dfe90a8b9cfddc4b56a374f9bb04b8851e3b
+    digest: 421353c500544a9932e04b56196423eb4ce5070e93e4c24a3ca2ff858e183911
     name: common
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2025-05-24T10:35:18.62933+02:00"
+    created: "2025-05-24T10:45:38.302647+02:00"
     description: The common Helm chart for Kubernetes
     digest: b0415d27efd7c6b0daba3f52e172dc35bb721ec00ca5240d89301b1d124fc5ad
     name: common
@@ -24,12 +24,12 @@ entries:
   cron-job:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2025-05-24T10:35:18.629726+02:00"
+    created: "2025-05-24T10:45:38.303057+02:00"
     description: A Helm chart for Cron-Job
-    digest: 9ba9646d552b1342982ee5f9abf9082ead30766e1e67edf5eee1d085165ceab2
+    digest: f7f1a8a4fb48ba8eb31d89155927975aac5bc396bc2cbe163872f3689b91cc4b
     name: cron-job
     type: application
     urls:
     - https://pavlo-berdiuhin.github.io/helm-charts/cron-job-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-24T10:35:18.628375+02:00"
+generated: "2025-05-24T10:45:38.301715+02:00"
