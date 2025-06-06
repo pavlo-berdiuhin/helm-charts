@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "app.fullname" . }}
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.app.service.type }}
+  ports:
+    - port: {{ .Values.app.service.port }}
+      targetPort: app
+      protocol: TCP
+      name: app
+    {{- if .Values.sidecar.enabled }}
+    - port: {{ .Values.sidecar.service.port }}
+      targetPort: sidecar
+      protocol: TCP
+      name: sidecar
+    {{- end }}
+  selector:
+    {{- include "app.selectorLabels" . | nindent 4 }}
