@@ -176,6 +176,11 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
+storage:
+  s3:
+    enabled: false
+    bucketName: ""
+
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:

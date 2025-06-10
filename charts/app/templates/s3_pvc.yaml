@@ -1,0 +1,39 @@
+{{- if .Values.storage.s3.enabled }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ .Release.Name }}-s3-pv
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  capacity:
+    storage: 1200Gi
+  accessModes:
+    - ReadWriteMany
+  mountOptions:
+    - file-mode 0777
+    - dir-mode 0777
+    - allow-other
+    - allow-overwrite
+    - allow-delete
+  csi:
+    driver: s3.csi.aws.com
+    volumeHandle: s3-csi-driver-volume
+    volumeAttributes:
+      bucketName: {{ .Values.storage.s3.bucketName }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Release.Name }}-s3-pvc
+  labels:
+    {{- include "app.labels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: ""
+  resources:
+    requests:
+      storage: 1Gi # This is just a placeholder value, ignored but required by k8s
+  volumeName: {{ .Release.Name }}-s3-pv
+{{- end }}
