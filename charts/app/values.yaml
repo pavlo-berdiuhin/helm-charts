@@ -180,6 +180,14 @@ storage:
   s3:
     enabled: false
     bucketName: ""
+    mountOptions: []
+#      - uid=1000
+#      - gid=2000
+#      - file-mode 0777
+#      - dir-mode 0777
+#      - allow-other
+#      - allow-overwrite
+#      - allow-delete
 
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/

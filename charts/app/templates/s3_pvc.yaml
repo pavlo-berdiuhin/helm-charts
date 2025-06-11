@@ -10,12 +10,7 @@ spec:
     storage: 1200Gi
   accessModes:
     - ReadWriteMany
-  mountOptions:
-    - file-mode 0777
-    - dir-mode 0777
-    - allow-other
-    - allow-overwrite
-    - allow-delete
+  mountOptions: {{- toYaml .Values.storage.s3.mountOptions | nindent 4 }}
   csi:
     driver: s3.csi.aws.com
     volumeHandle: s3-csi-driver-volume
