@@ -39,6 +39,24 @@ volumes: []
 #     secretName: mysecret
 #     optional: false
 
+storage:
+  s3:
+    enabled: false
+    bucketName: ""
+    mountOptions: []
+#      - uid=1000
+#      - gid=2000
+#      - file-mode 0777
+#      - dir-mode 0777
+#      - allow-other
+#      - allow-overwrite
+#      - allow-delete
+
+# This is for setting up a configMap more information can be found here: https://kubernetes.io/docs/concepts/configuration/configmap/
+configMap: {}
+# key: value
+# anotherKey: anotherValue
+
 app:
   # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
   image:
@@ -175,19 +193,6 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
-
-storage:
-  s3:
-    enabled: false
-    bucketName: ""
-    mountOptions: []
-#      - uid=1000
-#      - gid=2000
-#      - file-mode 0777
-#      - dir-mode 0777
-#      - allow-other
-#      - allow-overwrite
-#      - allow-delete
 
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
